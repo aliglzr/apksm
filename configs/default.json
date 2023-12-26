@@ -1,0 +1,46 @@
+{
+    "settings": {
+        "notifications": {
+            "email": [
+                {
+                    "smtp": "smtp.gmail.com",
+                    "port": 587,
+                    "username": "example@gmail.com",
+                    "password": "******",
+                    "from": "example@gmail.com",
+                    "to": [
+                        "example@gmail.com"
+                    ]
+                }
+            ],
+            "telegram": [
+                {
+                    "botToken": "123456:ABC-DEF-...",
+                    "chatId": "99999999"
+                }
+            ],
+            "webhook": [
+                {
+                    "url": "url",
+                    "method": "GET"
+                }
+            ]
+        },
+        "monitor": {
+            "checkInterval": 5,
+            "CPUMax": 1,
+            "monitorSystemUsage": true,
+            "memoryMax": 1000,
+            "exponentialBackoffSeconds": 5
+        }
+    },
+    "services": [
+        {
+            "name":"nginx",
+            "specificPattern":"high",
+            "checkInterval": 5,
+            "restartIfDown": true,
+            "saveLogsOnStop": true
+        }
+    ]
+}
